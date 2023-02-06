@@ -19,13 +19,14 @@
 
 // Code:
 const ipDiff = (ip1, ip2) => {
-  const ip1Arr = ip1.split('.');
-  const ip2Arr = ip2.split('.');
+  const [ip1octet4, ip1octet3, ip1octet2, ip1octet1] = ip1.split('.');
+  const [ip2octet4, ip2octet3, ip2octet2, ip2octet1] = ip2.split('.');
 
-  const octet4Diff = (ip1Arr[0] - ip2Arr[0]) * Math.pow(2, 24);
-  const octet3Diff = (ip1Arr[1] - ip2Arr[1]) * Math.pow(2, 16);
-  const octet2Diff = (ip1Arr[2] - ip2Arr[2]) * Math.pow(2, 8);
-  const octet1Diff = ip1Arr[3] - ip2Arr[3];
+
+  const octet4Diff = (ip1octet4 - ip2octet4) * Math.pow(2, 24);
+  const octet3Diff = (ip1octet3 - ip2octet3) * Math.pow(2, 16);
+  const octet2Diff = (ip1octet2 - ip2octet2) * Math.pow(2, 8);
+  const octet1Diff = ip1octet1 - ip2octet1;
 
   const total = octet4Diff + octet3Diff + octet2Diff + octet1Diff;
 
