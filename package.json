@@ -4,7 +4,8 @@
   "description": "A TDD challenge for converting ip addresses into base 10 numbers",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
