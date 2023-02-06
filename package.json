@@ -1,0 +1,22 @@
+{
+  "name": "ip_converter",
+  "version": "1.0.0",
+  "description": "A TDD challenge for converting ip addresses into base 10 numbers",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wvmitchell/ip_converter.git"
+  },
+  "author": "wvmitchell@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wvmitchell/ip_converter/issues"
+  },
+  "homepage": "https://github.com/wvmitchell/ip_converter#readme",
+  "devDependencies": {
+    "jest": "^29.4.1"
+  }
+}
