@@ -17,7 +17,8 @@ const findHigherIp = (a, b) => {
 
 const calculateDiff = (ipObj) => {
     const {hi, lo} = ipObj
-    return ()
+    console.log({hi,lo})
+    return (hi[3] - lo[3]) + (hi[2] - lo[2] * 256)
 }
 
 module.exports = {
@@ -27,6 +28,6 @@ module.exports = {
         }
         const ipSort = findHigherIp(ipStringHandler(a), ipStringHandler(b))
 
-        console.log(ipSort)
+        return calculateDiff(ipSort)
     }
 }
