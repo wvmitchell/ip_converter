@@ -1,33 +1,12 @@
-const ipStringHandler = (ip) => ip.split('.').map(ip => parseInt(ip))
+const ipUnstringer = (ip) => ip.split('.').map(ip => parseInt(ip))
 
-const findHigherIp = (a, b) => {
-    let higherIp
-    let i = 0
-    while(!higherIp && i < 4) {
-        if (a[i] > b[i]) {
-            higherIp = {hi: a, lo: b}
-        } else if (a[i] < b[i]) {
-            higherIp = {hi: b, lo: a}
-        } else if (a[i] === b[i]) {
-            i++
-        }
-    }
-    return higherIp
-}
-
-const calculateDiff = (ipObj) => {
-    const {hi, lo} = ipObj
-    console.log({hi,lo})
-    return (hi[3] - lo[3]) + (hi[2] - lo[2] * 256)
+const ipTotaler = (ip) => {
+     return ip.reduce((acc, cV, index) => {
+        acc += cV * Math.pow(256, ip.length - 1 - index)
+        return acc
+    }, 0)
 }
 
 module.exports = {
-    ipDiff(a, b) {
-        if (a === b) {
-            return 0
-        }
-        const ipSort = findHigherIp(ipStringHandler(a), ipStringHandler(b))
-
-        return calculateDiff(ipSort)
-    }
+    ipDiff: (a, b) => Math.abs(ipTotaler((ipUnstringer(a))) - ipTotaler(ipUnstringer(b)))
 }
